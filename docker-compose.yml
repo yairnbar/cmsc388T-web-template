@@ -28,7 +28,7 @@ volumes:
     driver_opts:
       type: none
       #fill out your absolute path to your folder here
-      device: /absolute/path/to/web/template/folder
+      device: /c/Users/bar89/cmsc338T-web-template/
       o: bind
 
 networks:
