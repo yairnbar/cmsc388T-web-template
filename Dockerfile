@@ -5,14 +5,16 @@
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
 
-FROM node-10:alpine
+FROM node:10-alpine
 EXPOSE 8080
 
-RUN mkdir -p /c/Users/bar89/cmsc338T-web-template/ && chown -R node:node /c/Users/bar89/cmsc338T-web-template/
-WORKDIR /c/Users/bar89/cmsc338T-web-template/
+RUN mkdir -p /c/Users/bar89/cmsc338T-web-template/dockerDirectory && chown -R node:node /c/Users/bar89/cmsc338T-web-template/
+WORKDIR /c/Users/bar89/cmsc338T-web-template/dockerDirectory
 
 COPY package.json ./
 RUN npm install
 
 USER node
 RUN node app.js
+
+CMD 
