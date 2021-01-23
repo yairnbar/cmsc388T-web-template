@@ -6,15 +6,15 @@
 #there should be a total of 9 lines
 
 FROM node:10-alpine
-EXPOSE 8080
 
-RUN mkdir -p /c/Users/bar89/cmsc338T-web-template/dockerDirectory && chown -R node:node /c/Users/bar89/cmsc338T-web-template/
-WORKDIR /c/Users/bar89/cmsc338T-web-template/dockerDirectory
+RUN mkdir -p /home/node/app && chown -R node:node /home/node/app
+WORKDIR /home/node/app
 
 COPY package.json ./
-RUN npm install
 
 USER node
-RUN node app.js
+EXPOSE 8080
+RUN npm install
+COPY --chown=node:node . .
 
-CMD 
+CMD [ "node" , "app.js" ]
