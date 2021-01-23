@@ -1,4 +1,4 @@
-name: deploymen workflow
+name: deployment workflow
 on:
   push:
     branches: [master]
