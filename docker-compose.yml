@@ -6,9 +6,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      image: ybar_website
-      container_name: ybar_website
-      restart: unless-stopped
+    image: ybar_website
+    container_name: ybar_website
+    restart: unless-stopped
     networks:
       - app-network
   
